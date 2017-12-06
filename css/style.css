@@ -1,0 +1,50 @@
+.header-container {
+	height: 30vh;
+	background-color: #ffffff;
+	padding: 15px;
+	display: flex;
+	margin-right: -15px;
+	margin-left: -15px;
+	align-items: center;
+	justify-content: center;
+}
+
+.content-container {
+	height: 70vh;
+	padding: 15px;
+	background-color: #ffffff;
+	margin-right: -15px;
+	margin-left: -15px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.brickwall {
+	height: 25vh;
+	width: 100em;
+}
+
+.title p {
+	margin-top: 50px;
+	font-size: 26px;
+	font-weight: 600;
+	margin-top: 15px;
+}
+
+.no-scroll {
+	overflow: hidden;
+}
+
+.body-container {
+	padding: 0;
+	margin: 0;
+}
+
+.input {
+	margin-left: 50%;
+}
+
+.full-width {
+	width: 100% !important;
+}
