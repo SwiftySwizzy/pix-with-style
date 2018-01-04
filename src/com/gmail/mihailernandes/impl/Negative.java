@@ -8,15 +8,13 @@ import javax.imageio.ImageIO;
 
 import com.gmail.mihailernandes.abstr.AbstractFilter;
 
-public class Bayer extends AbstractFilter {
+public class Negative extends AbstractFilter {
 
-	public Bayer(double red, double green, double blue) {
-		super(red, green, blue);
+	public Negative() {
 	}
 
 	@Override
 	public void filter(String path) {
-
 		try {
 			File input = new File(path);
 			BufferedImage image = ImageIO.read(input);
@@ -24,21 +22,19 @@ public class Bayer extends AbstractFilter {
 			int height = image.getHeight();
 
 			for (int i = 0; i < height; i++) {
-
 				for (int j = 0; j < width; j++) {
 
 					Color c = new Color(image.getRGB(j, i));
-					int red = (int) (c.getRed() * super.getRed());
-					int green = (int) (c.getGreen() * super.getGreen());
-					int blue = (int) (c.getBlue() * super.getBlue());
+					int red = 255 - (int) (c.getRed());
+					int green = 255 - (int) (c.getGreen());
+					int blue = 255 - (int) (c.getBlue());
 					Color newColor = new Color(red, green, blue);
-
 					image.setRGB(j, i, newColor.getRGB());
 				}
 			}
 
 			String name = path.substring(0, path.length() - 4);
-			name += "_bayer.jpg";
+			name += "_negative.jpg";
 			File output = new File(name);
 			ImageIO.write(image, "jpg", output);
 

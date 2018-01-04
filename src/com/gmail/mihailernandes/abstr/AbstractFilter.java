@@ -6,6 +6,8 @@ public abstract class AbstractFilter {
 	private double green;
 	private double blue;
 	
+	protected AbstractFilter() {}
+	
 	protected AbstractFilter(final double red, final double green, final double blue) {
 		super();
 		this.red = red;
